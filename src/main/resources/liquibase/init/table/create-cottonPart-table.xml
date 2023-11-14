@@ -1,0 +1,25 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+
+    <changeSet id="create-cottonPart-table" author="Irina">
+        <preConditions>
+            <not>
+                <tableExists tableName="cotton_part"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="cotton_part">
+            <column name="cotton_part_id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="cotton_part" type="INT">
+            </column>
+
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

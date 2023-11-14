@@ -1,0 +1,42 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+
+    <changeSet id="create-socks-table" author="Irina">
+
+        <preConditions>
+            <and>
+                <not>
+                    <tableExists tableName="socks"/>
+                </not>
+                <tableExists tableName="color"/>
+                <tableExists tableName="cotton_part"/>
+            </and>
+
+        </preConditions>
+
+        <createTable tableName="socks">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="color_id" type="INT">
+            </column>
+            <column name="cotton_part_id" type="INT">
+            </column>
+            <column name="quantity" type="INT">
+            </column>
+        </createTable>
+            <!-- внешний ключ -->
+            <addForeignKeyConstraint baseTableName="socks"
+                                     baseColumnNames="color_id" constraintName="FK_SOCKS_COLOR_ID" referencedTableName="color"
+                                     referencedColumnNames="color_id"/>
+
+            <!-- Внешний ключ -->
+            <addForeignKeyConstraint baseTableName="socks"
+                                     baseColumnNames="cotton_part_id" constraintName="FK_SOCKS_COTTONPART_ID" referencedTableName="cotton_part"
+                                     referencedColumnNames="cotton_part_id"/>
+    </changeSet>
+</databaseChangeLog>

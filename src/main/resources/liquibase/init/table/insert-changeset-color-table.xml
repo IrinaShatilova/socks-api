@@ -1,0 +1,30 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+
+    <changeSet id="insert-chageset-color-table" author="Irina">
+
+        <insert tableName="color">
+            <column name="color" value="White"/>
+            </insert>
+        <insert tableName="color">
+            <column name="color" value="Black"/>
+        </insert>
+        <insert tableName="color">
+            <column name="color" value="Red"/>
+        </insert>
+        <insert tableName="color">
+            <column name="color" value="Green"/>
+        </insert>
+        <insert tableName="color">
+            <column name="color" value="Yellow"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
+
+

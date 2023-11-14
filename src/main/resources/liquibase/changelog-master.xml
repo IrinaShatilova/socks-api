@@ -1,0 +1,13 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <include file="init/table/create-color-table.xml" relativeToChangelogFile="true"/>
+    <include file="init/table/create-cottonPart-table.xml" relativeToChangelogFile="true"/>
+    <include file="init/table/insert-changeset-color-table.xml" relativeToChangelogFile="true"/>
+    <include file="init/table/insert-changeset-cottonPart-table.xml" relativeToChangelogFile="true"/>
+    <include file="init/table/create-socks-table.xml" relativeToChangelogFile="true"/>
+    <include file="init/table/changeset-socks-add-constraint.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>
